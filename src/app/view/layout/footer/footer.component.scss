@@ -1,0 +1,26 @@
+@import 'colors';
+@import 'breakpoints';
+
+.footer {
+  align-items: center;
+  background: $red;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1rem 2rem;
+
+  @include respond-to('small') {
+    flex-direction: row;
+  }
+}
+
+.link {
+  color: $blue;
+  text-decoration: none;
+
+  &:hover {
+    color: $white;
+  }
+}

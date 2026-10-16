@@ -1,0 +1,15 @@
+  <div class="pagination">
+    <button class="btn btn-secondary" (click)="prev()" [disabled]="currentPage() === 1">«</button>
+
+    @for (page of pages; track page) {
+      <button
+        class="btn btn-secondary"
+        (click)="changePage(page)"
+        [class.active]="page === currentPage()"
+      >
+        {{ page }}
+      </button>
+    }
+
+    <button class="btn btn-secondary" (click)="next()" [disabled]="currentPage() === totalPages()">»</button>
+  </div>

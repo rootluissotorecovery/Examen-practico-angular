@@ -1,0 +1,11 @@
+<div class="card" (click)="pokemonSelected()">
+  <div class="img-container">
+    <img [src]="pokemon?.imageUrl || urlDefaultImg"/>
+  </div>
+  <div class="name-container">
+    <p>{{ pokemon?.name }}</p>
+  </div>
+  <div class="chip-container">
+    <div class="chip">Ver detalle</div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+// @use '@angular/material' as mat;
+// @import 'theme';
+// @import 'generics';
+@import 'layout';
+@import 'generics-components';
+
+.text-bold {
+  font-weight: 600;
+}

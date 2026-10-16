@@ -1,0 +1,35 @@
+@import 'colors';
+
+.pokemon-card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.card {
+  background-color: $white;
+  border-radius: 1rem;
+  max-width: 300px;
+  padding: 1rem 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.card:hover {
+  transform: scale(1.04);
+}
+
+.card img {
+  height: 150px;
+  margin-bottom: 1rem;
+  width: 150px;
+}
+
+.info h3 {
+  color: $black;
+  font-size: 1.2rem;
+}

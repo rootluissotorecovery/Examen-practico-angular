@@ -1,0 +1,36 @@
+@import 'colors';
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+
+}
+
+.btn-primary {
+  background-color: $red;
+  color: $white;
+  font-size: 1rem;
+  font-weight: 600;
+
+  &.active, &:hover:not(:disabled) {
+    background-color: $white;
+    color: $red;
+  }
+}
+
+.btn-secondary {
+  background-color: $gray-bg;
+  color: $black;
+
+  &.active, &:hover:not(:disabled) {
+    background-color: $red;
+    color: $white;
+  }
+}

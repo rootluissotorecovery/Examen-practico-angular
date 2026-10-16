@@ -1,0 +1,21 @@
+  <app-paginator
+    [totalItems]="dataListOriginal().length"
+    (pageChanged)="onPageChanged($event)"
+    [pageSize]="pageSize()"
+  >
+  </app-paginator>
+
+  @if (loading()) {
+  <app-loader></app-loader>
+  } @else {
+  <div>
+    @if(dataListFiltered().length === 0) {
+    <h1>No hay resultados</h1>
+    }
+    <div class="items-container">
+      @for(item of dataListFiltered(); track item.name) {
+      <app-pokemon-card [pokemon]="item"></app-pokemon-card>
+      }
+    </div>
+  </div>
+  }

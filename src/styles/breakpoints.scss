@@ -1,0 +1,45 @@
+// https://material.angular.dev/cdk/layout/overview
+$breakpoints: (
+  'xsmall': 0px,
+  // (max-width: 599.98px)
+  'small': 600px,
+  // (min-width: 600px) and (max-width: 959.98px)
+  'medium': 960px,
+  // (min-width: 960px) and (max-width: 1279.98px)
+  'large': 1280px,
+  // (min-width: 1280px) and (max-width: 1919.98px)
+  'xlarge': 1920px,
+  // (min-width: 1920px)
+  'xxlarge': 3000px,
+  //
+  ) !default;
+
+
+@mixin respond-to($breakpoint) {
+
+  // Si la llave existe en la lista
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  // si la llave no existe en la lista
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+    +"Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+// Uso
+
+// @import './breakpoints.scss';
+// @use 'breakpoints' as *;
+
+.class-name {
+  @include respond-to('medium') {}
+
+  @include respond-to('large') {}
+
+  @include respond-to('xlarge') {}
+}

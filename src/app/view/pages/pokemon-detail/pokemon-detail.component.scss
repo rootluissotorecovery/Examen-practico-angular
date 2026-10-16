@@ -1,0 +1,63 @@
+@import 'breakpoints';
+@import 'colors';
+
+.pokemon-detail-card {
+  background-color: $white;
+  border: 2px solid;
+  border-radius: 1rem;
+  margin: 20px auto;
+  max-width: 80vw;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.pokemon-header {
+  align-items: center;
+  color: $blue;
+  display: flex;
+  padding: 1rem;
+}
+
+.subtitle {
+  color: $blue;
+}
+
+.pokemon-image {
+  background-color: $white;
+  border-radius: 50%;
+  height: 120px;
+  margin-right: 1rem;
+  width: 120px;
+
+  @include respond-to('small') {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+.genus {
+  font-style: italic;
+}
+
+.chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 8px 10px 8px;
+}
+
+.chip {
+  background-color: $white;
+  border-radius: 13px;
+  color: $black;
+  margin-right: 5px;
+  padding: 5px 10px;
+  width: fit-content;
+}
+
+.ability-card {
+  background-color: $white;
+  border-radius: 1rem;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  width: 95%;
+}

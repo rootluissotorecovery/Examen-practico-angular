@@ -1,0 +1,23 @@
+@import 'breakpoints';
+
+.pagination {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+
+  @include respond-to('small') {
+    justify-content: center;
+  }
+}
+
+.btn {
+  margin: 5px 10px;
+
+  @include respond-to('small') {
+    .btn {
+      margin: 5px 0px;
+    }
+  }
+}

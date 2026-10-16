@@ -1,0 +1,43 @@
+@if (loading()) {
+  <app-loader></app-loader>
+} @else {
+  <div class="pokemon-detail-card">
+    <div class="pokemon-header">
+      <img
+        [src]="pokemonData.imageUrl || urlDefaultImg"
+        [alt]="pokemonData.name"
+        class="pokemon-image"
+      />
+      <div>
+        <h1>{{ pokemonData.name | titlecase }}</h1>
+        <p class="genus">- {{ pokemonData.order }} -</p>
+        <span class="text-bold">Experiencia base: </span>
+        <p>{{ pokemonData.base_experience }}</p>
+
+        <p>
+          <span class="text-bold">Peso: </span>
+          {{ pokemonData.height }}
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="subtitle">Tipos</h3>
+      <div class="chip-container">
+        @for (type of pokemonData.types; track type.slot) {
+          <span class="chip">{{ type.type.name }}</span>
+        }
+      </div>
+    </div>
+
+    <div>
+      <h3 class="subtitle">Habilidades</h3>
+      @for (ability of pokemonData.abilities; track ability.slot) {
+        <div class="ability-card">
+          <h4>- {{ ability.ability.name }} -</h4>
+          <p><strong>Slot:</strong> {{ ability.slot }}</p>
+        </div>
+      }
+    </div>
+  </div>
+}

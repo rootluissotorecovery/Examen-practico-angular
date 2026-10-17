@@ -19,17 +19,41 @@
   width: 100%;
 }
 
-.card:hover {
-  transform: scale(1.04);
-}
-
 .card img {
+  animation: move 2s infinite alternate;
   height: 150px;
   margin-bottom: 1rem;
   width: 150px;
 }
 
 .info h3 {
+  animation: moveText 2s infinite alternate;
   color: $black;
   font-size: 1.2rem;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(0);
+    background-color: $blue;
+  }
+
+  to {
+    transform: translateX(100px);
+    background-color: $red;
+  }
+}
+
+@keyframes moveText {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1.5);
+  }
 }
